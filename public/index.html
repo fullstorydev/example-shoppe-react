@@ -36,6 +36,7 @@
         newrelic.setCustomAttribute('FullStoryURL', FS.getCurrentSessionURL(true));
         window.addEventListener('error', function (error) {
           newrelic.noticeError(error, { FullStoryURL: FS.getCurrentSessionURL(true) });
+          FS.event('New Relic Error');
         });
         newrelic.setErrorHandler(function (error) {
           error.FullStoryURL = FS.getCurrentSessionURL(true);
