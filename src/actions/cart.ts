@@ -19,6 +19,7 @@ export const addToCart = (product: Product)  => {
 };
 
 export const removeFromCart = (index: number) => {
+  throw new Error('error removing item from cart');
   return createAction({
     type: CartTypes.RemoveFromCart,
     index,
